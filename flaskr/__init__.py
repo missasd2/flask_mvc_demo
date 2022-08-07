@@ -30,9 +30,17 @@ def create_app(test_config=None):
 
     # 导入并注册Blueprint
     from . import auth
-    app.register_blueprint(auth.app)
+    app.register_blueprint(auth.bp)
+
+    # 导入并注册新的Blueprint
+    from . import blog
+    app.register_blueprint(blog.bp)
+    app.add_url_rule("/", endpoint="index")
 
     return app
 
 
+
+if __name__ == '__main__':
+    create_app()
 
