@@ -1,5 +1,5 @@
 """
-消费者
+消费者-demo
 """
 
 from kafka import KafkaProducer, KafkaConsumer
